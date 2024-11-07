@@ -1,0 +1,112 @@
+header {
+  nav {
+    .container {
+      .header__link-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .header__links {
+          ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 12px 0;
+            li {
+              span {
+                .link {
+                  color: var(--main-text);
+                  font-weight: 600;
+                  transition: var(--transition);
+                  &:hover {
+                    color: black;
+                  }
+                }
+                .link.active {
+                  color: crimson;
+                }
+              }
+            }
+          }
+        }
+        .header__call {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+      }
+      .main__header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        .main__header-img {
+          .link {
+            padding-right: 30px;
+            .img {
+              width: 100%;
+            }
+          }
+        }
+        .main__header-catalog {
+          .main__header-BTN {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 27px;
+            border-radius: var(--radius);
+            border: 0;
+            background-color: var(--main-text);
+            color: var(--white);
+            transition: var(--transition);
+            cursor: pointer;
+            &:hover {
+              background-color: var(--main-hover);
+            }
+          }
+        }
+        .main__header-search {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          padding: 14px 24px;
+          border-radius: var(--radius);
+          border: 1px solid var(--main-text);
+          input {
+            border: 0;
+            width: 100%;
+            outline: none;
+            font-size: 18px;
+          }
+          button{
+            border: 0;
+            font-size: 26px;
+            margin-right: -30px;
+            background: transparent;
+            color: var(--main-text);
+          }
+        }
+        .main__header-btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .main__header-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            padding: 10px;
+            background: transparent;
+            border: 0;
+            font-size: 16px;
+            color: var(--main-text);
+            cursor: pointer;
+            .icon {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.container {
+  .category__title {
+    padding: 25px 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgb(20, 20, 20);
+      border: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition-duration: 0.3s;
+      overflow: hidden;
+      position: relative;
+
+      .svgIcon {
+        width: 12px;
+        transition-duration: 0.3s;
+
+        path {
+          fill: white;
+        }
+      }
+
+      &:hover {
+        width: 140px;
+        border-radius: 50px;
+        background-color: var(--main-text);
+        align-items: center;
+
+        .svgIconnn {
+          transition-duration: 0.3s;
+          transform: translateY(-200%);
+        }
+
+        &::before {
+          font-size: 13px;
+          opacity: 1;
+          bottom: unset;
+          transition-duration: 0.3s;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        bottom: -20px;
+        content: "All category";
+        color: white;
+        font-size: 0px;
+      }
+    }
+  }
+  .category__wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    margin: 25px 0;
+    .category__card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 25px 30px;
+      background-color: var(--hero-color);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      .category__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        p {
+          color: var(--main-text);
+          font-size: 18px;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          color: var(--main-text);
+          font-size: 18px;
+        }
+      }
+      .category__img {
+        width: 100%;
+        img {
+          max-width: 238px;
+          width: 100%;
+          height: 190px;
+          object-fit: contain;
+        }
+      }
+      &:hover {
+        background-color: black;
+      }
+      &:hover .category__text p {
+        color: white;
+      }
+      &:hover .category__text a {
+        color: white;
+      }
+    }
+  }
+}
