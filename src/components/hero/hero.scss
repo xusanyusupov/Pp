@@ -59,3 +59,21 @@ section{
         }
     }
 }
+@media (max-width: 790px) {
+    section {
+        .container {
+            .swipper {
+                height: auto;
+                
+                .carousel {
+                    padding-bottom: 50px;
+                    .slide__one {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center ;
+                    }
+                }
+            }
+        }
+    }
+}

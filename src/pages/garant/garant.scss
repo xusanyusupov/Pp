@@ -29,3 +29,12 @@
         }
     }
 }
+
+@media (max-width:550px) {
+    .container{
+        .garant__wrapper{
+            grid-template-columns: repeat(1,1fr);
+            padding: 0 20px;
+        }
+    }
+}

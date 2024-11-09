@@ -32,7 +32,6 @@
         flex-direction: column;
         border-radius: 20px;
         height: 200px;
-        margin-right: 70px;
         div {
           height: 100%;
           display: flex;
@@ -112,6 +111,27 @@
           border: 1px solid var(--main-text);
         }
       }
+    }
+  }
+}
+
+@media (max-width:750px) {
+  .container{
+    .about__wrapper{
+      grid-template-columns: repeat(1,1fr);
+    }
+    .about__client{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+}
+@media (max-width: 500px) {
+  .container{
+    .about__wrapper{
+      grid-template-columns: repeat(1,1fr);
+    }
+    .about__client{
+      grid-template-columns: repeat(1,1fr);
     }
   }
 }

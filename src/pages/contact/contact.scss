@@ -46,3 +46,13 @@
         }
     }
 }
+
+@media (max-width:550px) {
+    .container{
+        .contact__map{
+            .location{
+                display: none;
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ const Category = () => {
         
 
         <button class="button">
-            <FaArrowRightLong class="svgIconnn"/>
+            <FaArrowRightLong className="svgIconnn"/>
         </button>
 
       </div>
