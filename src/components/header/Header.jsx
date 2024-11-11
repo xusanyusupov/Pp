@@ -12,107 +12,92 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping, FaXmark } from "react-icons/fa6";
 import { FiBarChart2 } from "react-icons/fi";
-import { CiMenuBurger } from "react-icons/ci";
-import { FaBarsStaggered } from "react-icons/fa6";
-import { HiMiniXMark } from "react-icons/hi2";
+import { IoHomeSharp } from "react-icons/io5";
 // icpn en
 
-
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const [show,setshow] = useState(false)
 
-  const toggle = () => {
-    setShow(!show);
-  };
-
+  const toggle = () =>{
+    setshow(!show)
+  }
   return (
     <>
-      <header>
-        <nav>
-          <div className="container">
-            {/* top header start  */}
-            <div className="header__link-wrapper">
-              <div className="header__links">
-                <ul>
-                  <li>
-                    <span>
-                      <NavLink to={"/"} className="link">
-                        Home
-                      </NavLink>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <NavLink to={"/payment"} className="link">
-                        Payment
-                      </NavLink>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <NavLink to={"/about"} className="link">
-                        About
-                      </NavLink>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <NavLink to={"/return"} className="link">
-                        Return
-                      </NavLink>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <NavLink to={"/garant"} className="link">
-                        Garant
-                      </NavLink>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <NavLink to={"/contact"} className="link">
-                        Contact
-                      </NavLink>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <NavLink to={"/blog"} className="link">
-                        Blog
-                      </NavLink>
-                    </span>
-                  </li>
-                </ul>
-                <button className="media__category">
-                  <FaBarsStaggered />
-                </button>{" "}
-              
-              </div>
-              <div className="header__call">
-                <b>8 (800) 890-46-56</b>
-                <p>Заказать звонок</p>
-              </div>
+      <header className="header">
+        <div className="container">
+          {/* top header start  */}
+            {
+              show &&
+              <div onClick={()=>setshow(false)} className="header__overlay"></div>
+              }
+            <div className={`sub-header ${show ? "show" : ""}`}>
+              <ul className="sub-header__collection">
+                <li>
+                  <span>
+                    <NavLink to={"/"} className="sub-header__link">
+                      Home
+                    </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <NavLink onClick={()=>setshow(false)} to={"/payment"} className="sub-header__link">
+                      Payment
+                    </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <NavLink onClick={()=>setshow(false)} to={"/about"} className="sub-header__link">
+                      About
+                    </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <NavLink onClick={()=>setshow(false)} to={"/return"} className="sub-header__link">
+                      Return
+                    </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <NavLink onClick={()=>setshow(false)} to={"/garant"} className="sub-header__link">
+                      Garant
+                    </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <NavLink onClick={()=>setshow(false)} to={"/contact"} className="sub-header__link">
+                      Contact
+                    </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <NavLink onClick={()=>setshow(false)} to={"/blog"} className="sub-header__link">
+                      Blog
+                    </NavLink>
+                  </span>
+                </li>
+              </ul>
+              <a className="sub-header__phone" href="te:8 (800) 890-46-56">8 (800) 890-46-56 <span>Заказать</span></a>
             </div>
+
             {/* top header end  */}
 
             {/* main header start  */}
-            <div className="main__header">
-              <div className="main__header-media">
-                <div className="main__header-img">
-                  <Link to={"/"} className="link">
+            <nav className="navbar">
+                  <Link to={"/"} className="navbar__logo">
                     <img src={headLogo} alt="" />
                   </Link>
-                </div>
-                <div className="main__header-catalog">
-                  <button className="main__header-BTN">
+                  <button onClick={()=>setshow(true)} className="navbar__category-btn">
                     <HiOutlineBars3CenterLeft />
-                    <p>Categories</p>
+                    <span>Categories</span>
                   </button>
-                </div>
-              </div>
 
-              <div className="main__header-search">
+              <div className="navbar__search">
                 <input
                   type="text"
                   name=""
@@ -123,24 +108,27 @@ const Header = () => {
                   <IoSearch />
                 </button>
               </div>
-              <div className="main__header-btn">
-                <button className="main__header-btns">
+              <div className="navbar__action">
+                <Link to={'/'} className="navbar__action__link none">
+                  <IoHomeSharp className="icon" />
+                  <span>Home</span>
+                </Link>
+                <Link to={'/'} className="navbar__action__link">
                   <FaRegHeart className="icon" />
                   <span>Liked</span>
-                </button>
-                <button className="main__header-btns">
+                </Link>
+                <Link to={'/'} className="navbar__action__link">
                   <FiBarChart2 className="icon" />
                   <span>Comparison</span>
-                </button>
-                <button className="main__header-btns">
+                </Link>
+                <Link to={'/'} className="navbar__action__link">
                   <FaCartShopping className="icon" />
                   <span>Basket</span>
-                </button>
+                </Link>
               </div>
-            </div>
+            </nav>
             {/* main header end  */}
-          </div>
-        </nav>
+        </div>
       </header>
     </>
   );

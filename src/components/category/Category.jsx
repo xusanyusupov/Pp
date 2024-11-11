@@ -18,7 +18,7 @@ const Category = () => {
         <p>Category </p>
         
 
-        <button class="button">
+        <button className="button">
             <FaArrowRightLong className="svgIconnn"/>
         </button>
 
